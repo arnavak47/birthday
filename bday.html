@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Love</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Georgia', serif; }
+
+    body, html { height: 100%; overflow: hidden; background: linear-gradient(135deg, #ff9a9e, #fad0c4); }
+
+    .page { position: absolute; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; transition: transform 0.6s ease, opacity 0.6s ease; }
+
+    .hidden { opacity: 0; pointer-events: none; transform: translateX(100%); }
+
+    .card { background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); max-width: 650px; position: relative; }
+
+    h1 { font-size: 3rem; color: #ff4d6d; }
+
+    .next-btn { position: absolute; bottom: 20px; right: 20px; padding: 12px 18px; border: none; border-radius: 999px; background: #ff4d6d; color: white; cursor: pointer; font-size: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s ease, background 0.2s; }
+    .next-btn:hover { transform: scale(1.1); background: #ff2e55; }
+
+    .shared-img { max-width: 260px; border-radius: 20px; margin-bottom: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+
+    .love-list { margin-top: 10px; color: #ff4d6d; font-size: 1.2rem; text-align: left; }
+
+    .letter { max-width: 700px; background: #f5e6c8; padding: 45px 40px; border-radius: 6px; font-size: 1.15rem; line-height: 1.9; color: #4b3b2a; box-shadow: 0 15px 35px rgba(0,0,0,0.25); position: relative; white-space: pre-line; }
+
+    .letter::before, .letter::after { content: ""; position: absolute; width: 100%; height: 18px; left: 0; background: repeating-linear-gradient(-45deg, rgba(0,0,0,0.08), rgba(0,0,0,0.08) 2px, transparent 2px, transparent 6px); opacity: 0.3; }
+    .letter::before { top: -10px; }
+    .letter::after { bottom: -10px; }
+
+    .flower { max-width: 220px; margin-bottom: 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+
+    .floating-text { position: absolute; font-weight: bold; animation: float 4s ease-in-out infinite; background: rgba(255,255,255,0.9); color: #ff4d6d; padding: 10px 15px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .t1 { top: 10%; left: 15%; }
+    .t2 { top: 20%; right: 10%; }
+    .t3 { bottom: 25%; left: 10%; }
+    .t4 { bottom: 15%; right: 15%; }
+
+    .balloon { position: absolute; width: 40px; height: 50px; background: #ff6b81; border-radius: 50% 50% 45% 45%; animation: floatUp 6s linear infinite; opacity: 0.8; }
+    .balloon::after { content: ''; position: absolute; width: 2px; height: 40px; background: #555; left: 50%; top: 50px; }
+    .b1 { left: 10%; animation-delay: 0s; }
+    .b2 { left: 30%; animation-delay: 2s; }
+    .b3 { left: 70%; animation-delay: 4s; }
+    .b4 { left: 85%; animation-delay: 1s; }
+
+    @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+    @keyframes floatUp { 0%{bottom:-60px;} 100%{bottom:110%;} }
+  </style>
+</head>
+<body>
+
+  <div class="balloon b1"></div>
+  <div class="balloon b2"></div>
+  <div class="balloon b3"></div>
+  <div class="balloon b4"></div>
+
+  <!-- Page 1 -->
+  <div class="page" id="page1">
+    <div class="card">
+      <h1>Happy Birthday My Love ❤️</h1>
+      <p>You make every day of my life magical ✨</p>
+    </div>
+    <button class="next-btn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page hidden" id="page2">
+    <div class="card">
+      <img src="photo%202.jpg" class="shared-img" alt="Us sitting together" />
+      <div class="love-list">
+        <p><strong>I love:</strong></p>
+        <p>1. Your beautiful smile</p>
+        <p>2. Your gorgeous eyes</p>
+        <p>3. Everything about YOU 💖</p>
+      </div>
+    </div>
+    <button class="next-btn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page hidden" id="page3">
+    <div class="letter">
+Happy Birthday ❤️
+
+I still smile thinking about how we started with a movie. Maybe that’s why stories matter so much to us. I’ve always loved how Ok Jaanu shows two people figuring things out while choosing each other, and I feel like we’ve done that in our own way too.
+
+We’ve had moments like Conrad and Belly, with confusion and ups and downs, but what I love is that at the end of the day we always come back to each other. That’s what makes us special to me.
+
+My favourite moments are the simple ones. Our long calls where you tell me everything about your day and I just listen, your playlists with Tum Se and Closed Eyes, and the fact that you listen to my favourite Drake songs just because I like them. It’s the vibe we share, being best friends first, that makes being with you feel easy and real.
+
+I’m really glad I have you, and I’m really grateful that I get to call you mine.
+Happy Birthday once again ❤️
+    </div>
+    <button class="next-btn" onclick="nextPage()">Next →</button>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="page hidden" id="page4">
+    <div class="card">
+      <img src="photo%205.jpg" alt="Forever us" class="flower" />
+      <h2>Forever Yours 💕</h2>
+    </div>
+
+    <div class="floating-text t1">You're my happiest place 💖</div>
+    <div class="floating-text t2">So beautiful inside & out 🌸</div>
+    <div class="floating-text t3">My favorite person forever ✨</div>
+    <div class="floating-text t4">I love you endlessly 💞</div>
+  </div>
+
+  <script>
+    let current = 1;
+    function nextPage() {
+      const currentPage = document.getElementById(`page${current}`);
+      current++;
+      const nextPage = document.getElementById(`page${current}`);
+      if (nextPage) { currentPage.classList.add('hidden'); nextPage.classList.remove('hidden'); }
+    }
+  </script>
+
+</body>
+</html>
